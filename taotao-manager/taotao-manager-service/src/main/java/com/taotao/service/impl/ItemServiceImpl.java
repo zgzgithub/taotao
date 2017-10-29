@@ -5,12 +5,14 @@ import com.github.pagehelper.PageInfo;
 import com.taotao.common.pojo.EUDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.IDUtils;
-import com.taotao.mapper.TbItemDescMapper;
-import com.taotao.mapper.TbItemMapper;
+import com.taotao.service.TbItemDescMapper;
+import com.taotao.service.TbItemMapper;
+import com.taotao.service.TbItemParamItemMapper;
 import com.taotao.pojo.TbItem;
 
 import com.taotao.pojo.TbItemDesc;
 import com.taotao.pojo.TbItemExample;
+import com.taotao.pojo.TbItemParamItem;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +26,12 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private TbItemMapper itemMapper;
+
     @Autowired
     private TbItemDescMapper itemDescMapper;
+
+    @Autowired
+    private TbItemParamItemMapper itemParamItemMapper;
 
     @Override
     public TbItem getItemById(long itemId) {
@@ -50,19 +56,26 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public TaotaoResult createItem(TbItem item,String desc) throws Exception {
-        Long itemId= IDUtils.genItemId();
+    public TaotaoResult createItem(TbItem item, String desc, String itemParam) throws Exception {
+        //item补全
+        //生成商品ID
+        Long itemId = IDUtils.genItemId();
         item.setId(itemId);
-        //商品状态，1-正常，2-下架，3-删除
+        // '商品状态，1-正常，2-下架，3-删除',
         item.setStatus((byte) 1);
         item.setCreated(new Date());
         item.setUpdated(new Date());
-        //商品信息插入到数据库
+        //插入到数据库
         itemMapper.insert(item);
-        //添加商品描述
-        TaotaoResult result=insertItemDesc(itemId,desc);
-        if(result.getStatus()!=200){
-           throw new Exception();
+        //添加商品描述信息
+        TaotaoResult result = insertItemDesc(itemId, desc);
+        if (result.getStatus() != 200) {
+            throw new Exception();
+        }
+        //添加规格参数
+        result = insertItemParamItem(itemId, itemParam);
+        if (result.getStatus() != 200) {
+            throw new Exception();
         }
         return TaotaoResult.ok();
     }
@@ -80,5 +93,26 @@ public class ItemServiceImpl implements ItemService {
         itemDesc.setUpdated(new Date());
         itemDescMapper.insert(itemDesc);
         return TaotaoResult.ok();
+    }
+    /**
+     * 添加规格参数
+     * <p>Title: insertItemParamItem</p>
+     * <p>Description: </p>
+     * @param itemId
+     * @param itemParam
+     * @return
+     */
+    private TaotaoResult insertItemParamItem(Long itemId, String itemParam) {
+        //创建一个pojo
+        TbItemParamItem itemParamItem = new TbItemParamItem();
+        itemParamItem.setItemId(itemId);
+        itemParamItem.setParamData(itemParam);
+        itemParamItem.setCreated(new Date());
+        itemParamItem.setUpdated(new Date());
+        //向表中插入数据
+        itemParamItemMapper.insert(itemParamItem);
+
+        return TaotaoResult.ok();
+
     }
 }

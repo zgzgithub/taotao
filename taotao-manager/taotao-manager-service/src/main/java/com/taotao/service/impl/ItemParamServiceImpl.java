@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.mapper.TbItemParamMapper;
+import com.taotao.service.TbItemParamMapper;
 import com.taotao.pojo.TbItemParam;
 import com.taotao.pojo.TbItemParamExample;
 import com.taotao.pojo.TbItemParamExample.Criteria;

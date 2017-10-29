@@ -3,7 +3,6 @@ package com.taotao.service.impl;
 import com.taotao.common.utils.FtpUtil;
 import com.taotao.common.utils.IDUtils;
 import com.taotao.service.PictureService;
-import org.apache.ibatis.mapping.ResultMap;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
