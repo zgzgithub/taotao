@@ -5,9 +5,9 @@ import com.github.pagehelper.PageInfo;
 import com.taotao.common.pojo.EUDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.IDUtils;
-import com.taotao.service.TbItemDescMapper;
-import com.taotao.service.TbItemMapper;
-import com.taotao.service.TbItemParamItemMapper;
+import com.taotao.mapper.TbItemDescMapper;
+import com.taotao.mapper.TbItemMapper;
+import com.taotao.mapper.TbItemParamItemMapper;
 import com.taotao.pojo.TbItem;
 
 import com.taotao.pojo.TbItemDesc;
