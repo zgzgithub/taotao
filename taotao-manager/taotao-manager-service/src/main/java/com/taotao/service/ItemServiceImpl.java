@@ -1,4 +1,4 @@
-package com.taotao.service.impl;
+package com.taotao.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

@@ -1,4 +1,4 @@
-package com.taotao.service.impl;
+package com.taotao.service;
 
 import java.util.List;
 import java.util.Map;

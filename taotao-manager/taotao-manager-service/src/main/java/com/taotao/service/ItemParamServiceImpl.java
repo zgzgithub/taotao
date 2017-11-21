@@ -1,4 +1,4 @@
-package com.taotao.service.impl;
+package com.taotao.service;
 
 import java.util.Date;
 import java.util.List;

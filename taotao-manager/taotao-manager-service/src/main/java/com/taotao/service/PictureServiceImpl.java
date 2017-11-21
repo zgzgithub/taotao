@@ -1,4 +1,4 @@
-package com.taotao.service.impl;
+package com.taotao.service;
 
 import com.taotao.common.utils.FtpUtil;
 import com.taotao.common.utils.IDUtils;

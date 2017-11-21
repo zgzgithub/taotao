@@ -1,4 +1,4 @@
-package com.taotao.service.impl;
+package com.taotao.service;
 
 import com.taotao.common.pojo.EUTreeNode;
 import com.taotao.mapper.TbItemCatMapper;
