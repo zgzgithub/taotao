@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.taotao.portal.pojo.ItemInfo;
-import com.taotao.portal.service.ItemService;
+import com.taotao.pojo.ItemInfo;
+import com.taotao.service.ItemService;
 
 /**
  * 商品详情页面展示

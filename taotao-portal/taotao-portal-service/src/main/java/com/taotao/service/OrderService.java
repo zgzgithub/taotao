@@ -1,6 +1,6 @@
 package com.taotao.service;
 
-import com.taotao.portal.pojo.Order;
+import com.taotao.pojo.Order;
 
 public interface OrderService {
 

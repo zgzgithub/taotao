@@ -1,6 +1,6 @@
 package com.taotao.service;
 
-import com.taotao.portal.pojo.ItemInfo;
+import com.taotao.pojo.ItemInfo;
 
 public interface ItemService {
 

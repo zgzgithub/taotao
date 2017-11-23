@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.taotao.common.utils.ExceptionUtil;
 import com.taotao.pojo.TbUser;
-import com.taotao.portal.pojo.CartItem;
-import com.taotao.portal.pojo.Order;
-import com.taotao.portal.service.CartService;
-import com.taotao.portal.service.OrderService;
+import com.taotao.pojo.CartItem;
+import com.taotao.pojo.Order;
+import com.taotao.service.CartService;
+import com.taotao.service.OrderService;
 
 @Controller
 @RequestMapping("/order")

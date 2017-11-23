@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.taotao.portal.pojo.SearchResult;
-import com.taotao.portal.service.SearchService;
+import com.taotao.pojo.SearchResult;
+import com.taotao.service.SearchService;
 
 /**
  * 商品搜索Controller

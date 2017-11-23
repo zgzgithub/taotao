@@ -1,6 +1,6 @@
 package com.taotao.service;
 
-import com.taotao.portal.pojo.SearchResult;
+import com.taotao.pojo.SearchResult;
 
 public interface SearchService {
 
